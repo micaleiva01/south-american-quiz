@@ -1,0 +1,14 @@
+body {
+  color: #000;
+  background: #F5E6CF;
+}
+
+#map2 {
+  border: 5px solid #000;
+  height: 500px;
+}
+
+footer {
+  background: #000;
+  color: #fff;
+}
