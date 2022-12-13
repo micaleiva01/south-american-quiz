@@ -1,6 +1,6 @@
 body {
   color: #000;
-  background: #F5E6CF;
+  background-image: linear-gradient(pink, orange);
   font-family: Roboto, Calibri, sans-serif;
 }
 
