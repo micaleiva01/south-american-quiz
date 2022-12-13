@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css" integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14=" crossorigin="">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <title>Which South American Country Should YOU Go To</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cardo&family=Josefin+Sans&family=Oswald&family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
     <style>
         #map2 {
           height: 500px;
@@ -45,11 +49,11 @@
 
           <h1 id="title2" class="text-center p-5">LET'S GET STARTED...</h1>
 
-
+<!--
           <div class="p-2">
           <label for="best_city">1. First things first, which one of these cities sound the most appealing to you?</label>
           <select id="best_city" name="best_city">
-          <option> -- Select City -- </option>
+          <option>Select City</option>
           <option class="argentina">Buenos Aires</option>
           <option class="bolivia">La Paz</option>
           <option class="brazil">Rio de Janeiro</option>
@@ -62,181 +66,206 @@
           <option class="venezuela">Caracas</option>
           </select><br>
           </div>
+-->
 
 
-          <div class="p-2">
-            <p>2. Which of the following sound more appealing to you? (choose only one)</p>
-            <div class="form-check">
+          <p>1. Which of the following sound more appealing to you?</p>
+          <div class="question p-3">
+
+            <div class="answerchoice form-check">
               <label class="form-check-label">
-              <input class="brazil venezuela colombia form-check-input" type="radio" name="most_appealing" value="beach">The beach</label>
+              <input class="brazil venezuela colombia form-check-input" id="q1a1" type="radio" name="most_appealing" value="beach">The beach</label>
             </div>
-            <div class="form-check">
+            <div class="answerchoice form-check">
               <label class="form-check-label">
-              <input class="argentina uruguay form-check-input" type="radio" name="most_appealing" value="big City">A big city</label>
+              <input class="argentina uruguay form-check-input" id="q1a2" type="radio" name="most_appealing" value="big City">A big city</label>
             </div>
-            <div class="form-check">
+            <div class="answerchoice form-check">
               <label class="form-check-label">
-              <input class="ecuador bolivia paraguay form-check-input" type="radio" name="most_appealing" value="countryside">Countryside</label>
+              <input class="ecuador bolivia paraguay form-check-input" id="q1a3" type="radio" name="most_appealing" value="countryside">Countryside</label>
             </div>
-            <div class="form-check">
+            <div class="answerchoice form-check">
               <label class="form-check-label">
-              <input class="chile peru form-check-input" type="radio" name="most_appealing" value="mountains">The mountains</label>
+              <input class="chile peru form-check-input" type="radio" id="q1a4" name="most_appealing" value="mountains">The mountains</label>
             </div>
+           </div>
+
+
+
+
+        <p>2. Which food would you rather eat right now? (choose only one)</p>
+        <div class="question p-3">
+
+            <div class="answerchoice form-check">
+              <label class="form-check-label">
+              <input class="peru ecuador bolivia form-check-input" id="q2a1" type="radio" name="desired_food" value="ceviche">Ceviche</label>
+            </div>
+            <div class="answerchoice form-check">
+              <label class="form-check-label">
+              <input class="venezuela colombia form-check-input" id="q2a2"  type="radio" name="desired_food" value="arepas">Arepas</label>
+            </div>
+            <div class="answerchoice form-check">
+              <label class="form-check-label">
+              <input class="brazil form-check-input"  id="q2a3" type="radio" name="desired_food" value="pastel">Pastel</label>
+            </div>
+            <div class="answerchoice form-check">
+              <label class="form-check-label">
+              <input class="argentina uruguay chile paraguay form-check-input" id="q2a4" type="radio" name="desired_food" value="asado">Asado</label>
+            </div>
+
           </div>
 
 
-          <div class="p-2">
-            <p>3. Which food would you rather eat right now? (choose only one)</p>
-            <div class="form-check">
+
+        <p>3. Which European city do you like the most?</p>
+        <div class="question p-3">
+
+            <div class="answerchoice form-check">
               <label class="form-check-label">
-              <input class="peru ecuador bolivia form-check-input" type="radio" name="desired_food" value="ceviche">Ceviche</label>
+              <input class="argentina uruguay santiago form-check-input" id="q3a1"  type="radio" name="best_euro_country" value="paris">Paris, France</label>
             </div>
-            <div class="form-check">
+            <div class="answerchoice form-check">
               <label class="form-check-label">
-              <input class="venezuela colombia form-check-input" type="radio" name="desired_food" value="arepas">Arepas</label>
+              <input class="colombia ecuador form-check-input" type="radio" id="q3a2"  name="best_euro_country" value="positano">Positano, Italy</label>
             </div>
-            <div class="form-check">
+            <div class="answerchoice form-check">
               <label class="form-check-label">
-              <input class="brazil form-check-input" type="radio" name="desired_food" value="pastel">Pastel</label>
+              <input class="peru venezuela form-check-input" type="radio" id="q3a3"  name="best_euro_country" value="athens">Athens, Greece</label>
             </div>
-            <div class="form-check">
+            <div class="fanswerchoice orm-check">
               <label class="form-check-label">
-              <input class="argentina uruguay chile paraguay form-check-input" type="radio" name="desired_food" value="asado">Asado</label>
+              <input class="bolivia paraguay brazil form-check-input" id="q3a4" type="radio" name="best_euro_country" value="Asado">Ibiza, Spain</label>
             </div>
+
           </div>
 
 
-          <div class="p-2">
-            <p>4. Which European city do you like the most?</p>
-            <div class="form-check">
-              <label class="form-check-label">
-              <input class="argentina uruguay santiago form-check-input" type="radio" name="best_euro_country" value="paris">Paris, France</label>
-            </div>
-            <div class="form-check">
-              <label class="form-check-label">
-              <input class="colombia ecuador form-check-input" type="radio" name="best_euro_country" value="positano">Positano, Italy</label>
-            </div>
-            <div class="form-check">
-              <label class="form-check-label">
-              <input class="peru venezuela form-check-input" type="radio" name="best_euro_country" value="athens">Athens, Greece</label>
-            </div>
-            <div class="form-check">
-              <label class="form-check-label">
-              <input class="bolivia paraguay brazil form-check-input" type="radio" name="best_euro_country" value="Asado">Ibiza, Spain</label>
-            </div>
-          </div>
+         <p>4. Do you like crowded cities?</p>
+          <div class="question p-3">
 
-          <div class="p-2">
-            <p>5. Do you like crowded cities?</p>
-            <div class="form-check">
+            <div class="answerchoice form-check">
               <label class="form-check-label">
-              <input class="brazil argentina peru form-check-input" type="radio" name="crowded_cities" value="yes">Yes, I love people!</label>
+              <input class="brazil argentina peru form-check-input"  id="q4a1" type="radio" name="crowded_cities" value="yes">Yes, I love people!</label>
             </div>
-            <div class="form-check">
+            <div class="answerchoice form-check">
               <label class="form-check-label">
-              <input class="colombia venezuela chile form-check-input" type="radio" name="crowded_cities" value="a little bit">I tolerate people every once in a while</label>
+              <input class="colombia venezuela chile form-check-input"  id="q4a2" type="radio" name="crowded_cities" value="a little bit">I tolerate people every once in a while</label>
             </div>
-            <div class="form-check">
+            <div class="answerchoice form-check">
               <label class="form-check-label">
-              <input class="ecuador bolivia paraguay form-check-input" type="radio" name="crowded_cities" value="not really">I don't usually like being in crowded areas</label>
+              <input class="ecuador bolivia paraguay form-check-input" id="q4a3"  type="radio" name="crowded_cities" value="not really">I don't usually like being in crowded areas</label>
             </div>
-            <div class="form-check">
+            <div class="answerchoice form-check">
               <label class="form-check-label">
-              <input class="uruguay form-check-input" type="radio" name="crowded_cities" value="no">No, I'd rather be in empty spaces</label>
+              <input class="uruguay form-check-input" type="radio" id="q4a4"  name="crowded_cities" value="no">No, I'd rather be in empty spaces</label>
             </div>
+
           </div>
 
 
-          <div class="p-2">
-            <p>6. Do you speak spanish?</p>
-            <div class="form-check">
+        <p>5. Do you speak spanish?</p>
+          <div class="question p-3">
+
+            <div class="answerchoice form-check">
               <label class="form-check-label">
-              <input class="argentina chile uruguay brazil form-check-input" type="radio" name="spanish_speaker" value="yes">Yes, I'm almost fluent!</label>
+              <input class="argentina chile uruguay brazil form-check-input" id="q5a1"  type="radio" name="spanish_speaker" value="yes">Yes, I'm almost fluent!</label>
             </div>
-            <div class="form-check">
+            <div class="answerchoice form-check">
               <label class="form-check-label">
-              <input class="venezuela bolivia paraguay form-check-input" type="radio" name="spanish_speaker" value="enough to get by">Just enough to get by</label>
+              <input class="venezuela bolivia paraguay form-check-input"  id="q5a2" type="radio" name="spanish_speaker" value="enough to get by">Just enough to get by</label>
             </div>
-            <div class="form-check">
+            <div class="answerchoice form-check">
               <label class="form-check-label">
-              <input class="colombia ecuador peru form-check-input" type="radio" name="spanish_speaker" value="no">Not really, but I'm trying to learn!</label>
+              <input class="colombia ecuador peru form-check-input" id="q5a3"  type="radio" name="spanish_speaker" value="no">Not really, but I'm trying to learn!</label>
             </div>
+
           </div>
 
 
-          <div class="p-2">
-            <p>7. Do you usually drink coffee?</p>
-            <div class="form-check">
+
+        <p>6. Do you usually drink coffee?</p>
+          <div class="question p-3">
+
+            <div class="answerchoice form-check">
               <label class="form-check-label">
-              <input class="brazil colombia venezuela form-check-input" type="radio" name="coffee_drinker" value="yes">Yes, I love coffee!</label>
+              <input class="brazil colombia venezuela form-check-input" id="q6a1"  type="radio" name="coffee_drinker" value="yes">Yes, I love coffee!</label>
             </div>
-            <div class="form-check">
+            <div class="answerchoice form-check">
               <label class="form-check-label">
-              <input class="argentina uruguay peru form-check-input" type="radio" name="coffee_drinker" value="a little bit">Just a little bit</label>
+              <input class="argentina uruguay peru form-check-input" id="q6a2"  type="radio" name="coffee_drinker" value="a little bit">Just a little bit</label>
             </div>
-            <div class="form-check">
+            <div class="answerchoice form-check">
               <label class="form-check-label">
-              <input class="chile bolivia paraguay ecuador form-check-input" type="radio" name="coffee_drinker" value="no">Not really</label>
+              <input class="chile bolivia paraguay ecuador form-check-input" id="q6a3"  type="radio" name="coffee_drinker" value="no">Not really</label>
             </div>
+
           </div>
 
 
-          <div class="p-2">
-            <p>8. Assuming you are from the U.S., can you tolerate long flights??</p>
-            <div class="form-check">
-              <label class="form-check-label">
-              <input class="argentina chile uruguay bolivia form-check-input" type="radio" name="long_flights" value="yes">Yes, I really enjoy flights since they are one of the best parts of the trip!</label>
-            </div>
-            <div class="form-check">
-              <label class="form-check-label">
-              <input class="peru brazil paraguay form-check-input" type="radio" name="long_flights" value="a little bit">I'd rather not, but I don't mind as long as the destination is worth it</label>
-            </div>
-            <div class="form-check">
-              <label class="form-check-label">
-              <input class="colombia venezuela ecuador form-check-input" type="radio" name="long_flights" value="no">I can't be on a plane for more than a couple hours</label>
-            </div>
-          </div>
+        <p>7. Assuming you are from the U.S., can you tolerate long flights??</p>
+          <div class="question p-3">
 
-          <div class="p-2">
-            <p>9. What's your ideal weather like?</p>
-            <div class="form-check">
+            <div class="answerchoice form-check">
               <label class="form-check-label">
-              <input class="argentina chile form-check-input" type="radio" name="ideal_weather" value="both">I want the best of both worlds, I can't decide</label>
+              <input class="argentina chile uruguay bolivia form-check-input" id="q7a1"  type="radio" name="long_flights" value="yes">Yes, I really enjoy flights since they are one of the best parts of the trip!</label>
             </div>
-            <div class="form-check">
+            <div class="answerchoice form-check">
               <label class="form-check-label">
-              <input class="uruguay argentina chile form-check-input" type="radio" name="ideal_weather" value="cold">I can't stand hot weather, I'd rather go somewhere it doesn't get too hot</label>
+              <input class="peru brazil paraguay form-check-input" type="radio" id="q7a2"  name="long_flights" value="a little bit">I'd rather not, but I don't mind as long as the destination is worth it</label>
             </div>
-            <div class="form-check">
+            <div class="answerchoice form-check">
               <label class="form-check-label">
-              <input class="brazil venezuela colombia ecuador form-check-input" type="radio" name="ideal_weather" value="hot">I really don't like cold weather, I'd rather go somewhere it doesn't get too cold</label>
+              <input class="colombia venezuela ecuador form-check-input" id="q7a3"  type="radio" name="long_flights" value="no">I can't be on a plane for more than a couple hours</label>
             </div>
-            <div class="form-check">
-              <label class="form-check-label">
-              <input class="peru form-check-input" type="radio" name="ideal_weather" value="No">I'd like somewhere where it doesn't get to cold or too hot</label>
-            </div>
+
           </div>
 
 
-          <div class="p-2">
-            <p>10. Last but not least, why would you want to visit South America?</p>
-            <div class="form-check">
+        <p>8. What's your ideal weather like?</p>
+          <div class="question p-3">
+
+            <div class="answerchoice form-check">
               <label class="form-check-label">
-              <input class="peru ecuador paraguay form-check-input" type="radio" name="reason" value="Yes">The people</label>
+              <input class="argentina paraguay form-check-input" id="q8a1"  type="radio" name="ideal_weather" value="both">I want the best of both worlds, I can't decide</label>
             </div>
-            <div class="form-check">
+            <div class="answerchoice form-check">
               <label class="form-check-label">
-              <input class="colombia venezuela form-check-input" type="radio" name="reason" value="Yes">The food</label>
+              <input class="uruguay argentina chile form-check-input" id="q8a2"  type="radio" name="ideal_weather" value="cold">I can't stand hot weather, I'd rather go somewhere it doesn't get too hot</label>
             </div>
-            <div class="form-check">
+            <div class="answerchoice">
               <label class="form-check-label">
-              <input class="bolivia brazil form-check-input" type="radio" name="reason" value="A little bit">It's landscapes</label>
+              <input class="brazil venezuela colombia ecuador form-check-input" id="q8a3"  type="radio" name="ideal_weather" value="hot">I really don't like cold weather, I'd rather go somewhere it doesn't get too cold</label>
             </div>
-            <div class="form-check">
+            <div class="answerchoice">
               <label class="form-check-label">
-              <input class="argentina uruguay chile form-check-input" type="radio" name="reason" value="No">The different cultures</label>
+              <input class="peru form-check-input" id="q8a4"  type="radio" name="ideal_weather" value="No">I'd like somewhere where it doesn't get to cold or too hot</label>
             </div>
+
           </div>
+
+
+        <p>9. Last but not least, why would you want to visit South America?</p>
+          <div class="question p-3">
+
+            <div class="answerchoice form-check">
+              <label class="form-check-label">
+              <input class="peru ecuador paraguay form-check-input" id="q9a1"  type="radio" name="reason" value="Yes">The people</label>
+            </div>
+            <div class="answerchoice form-check">
+              <label class="form-check-label">
+              <input class="colombia venezuela form-check-input" id="q9a2"  type="radio" name="reason" value="Yes">The food</label>
+            </div>
+            <div class="answerchoice form-check">
+              <label class="form-check-label">
+              <input class="bolivia brazil form-check-input" id="q9a2"  type="radio" name="reason" value="A little bit">It's landscapes</label>
+            </div>
+            <div class="answerchoice form-check">
+              <label class="form-check-label">
+              <input class="argentina uruguay chile form-check-input" id="q9a3"  type="radio" name="reason" value="No">The different cultures</label>
+            </div>
+
+          </div>
+
 
               <!-- Buttons -->
 
@@ -245,12 +274,14 @@
             <button id="reset" type="reset" value="Reset" class="btn btn-outline-dark btn-sm m-2">Start over</button>
           </div>
 
+          <p class="align-text-bottom text-center p-4 text-black-50">Some code written by Keyley Seow on <a href="https://github.com/kayleyseow/Personality-Quiz">Github.</a></p>
+
+
 
         </div>
 
         <!--end of div for the quiz-->
 
-      </div>
 
       <!--start of div for the user's results-->
 
@@ -258,25 +289,47 @@
         <h1 class="text-center p-4">The results are IN!</h1>
 
         <p id="brazilWinner">The country you should visit is <strong>Brazil</strong>. You probably love going to the beach and enjoy sunbathing during your free time.
-          Brazil is the largest country in South America and the fifth largest country in the world. </p>
+          Brazil is the largest country in South America and the fifth largest country in the world, so you are most likely a people person!. You probably enjoy partying during the weekends and having fun with your friends.
+          Maybe spanish isn't your first language but you can still communicate perfectly since most locals seem to know Spanish as well as their native language, Portuguese. Usually, the best time to visit is between the months of September and October since there it is not during the rainy season and it is not cold.
+          For more information visit <a href="https://www.visitbrasil.com/en/">their official website.</a></p>
 
-        <p id="argentinaWinner">The country you should visit is <strong>Argentina</strong>.</p>
+        <p id="argentinaWinner">The country you should visit is <strong>Argentina</strong>. You probably love walking around big cities while getting to know differen cultures and traditions. Argentina has a really fun nightlife
+           and also has the best cities to go and explore (they don't call Buenos Aires "The Paris of the South" for nothing, you know). You probably enjoy all sorts of weather and want to enjoy good food as well. Even though spanish may not be your first language, you can still probably communicate with
+           the locals since most of them will be eager to practice their english with you! Usually, the best time of the year to travel is during their spring (September to November) and their fall (March to May). For more information visit <a href="https://www.argentina.travel/en">their official website.</a></p>
 
-        <p id="chileWinner">The country you should visit is <strong>Chile</strong>.</p>
+        <p id="chileWinner">The country you should visit is <strong>Chile</strong>. You definitely enjoy big cities while also being able to admire beautiful landscapes. You don't mind if it gets a little bit chilly and actually enjoy
+           when the weather gets a little bit cold. You definitely love meeting new people and learning about different cultures and traditions! With a variety of different traditions from one part of the country to another, Chile
+           definitely the right place for you! Usually, the best time of the year to travel is during their spring (September to November) and their fall (March to May). For more information visit <a href="https://www.chile.travel/en/">their official website.</a></p>
 
-        <p id="uruguayWinner">The country you should visit is <strong>Uruguay</strong>.</p>
+        <p id="uruguayWinner">The country you should visit is <strong>Uruguay</strong>. As the smallest country in South America, Uruguay has a lot to offer. If you've been to Europe and love walking around small towns to admire its people and architecture,
+            Uruguay is definitely the place for you! As a country with a lot of European influence, Uruguay will be a perfect mix of South American essence and European influence. Many local dishes will be a perfect combination of European and South American food!
+            Your probably enjoy the colder weather but also like to sunbathe when the sun it out. Uruguay is definitely the place for you! Usually, the best time of the year to travel is during their spring (September to November) and their fall (March to May).
+            For more information visit <a href="https://www.welcomeuruguay.com/index_i.html">their official website.</a></p>
 
-        <p id="peruWinner">The country you should visit is <strong>Peru</strong>.</p>
+        <p id="peruWinner">The country you should visit is <strong>Peru</strong>. You probably love to enjoy good food with a view. Peru is famous for its historical places such as the Machu Pichu ruins, and the Historic District of Lima. Peruvians are known to be kind
+           to tourists and even if you don't know much spanish, you will not have a problem with the locals as many of them know english as a second language. Flights to peru are not very long so this will be your perfect destination if you want to have an amazing experience visiting
+           a nearby country. Usually, the best time of the year to travel is during the months of May to October. For more information visit <a href="https://www.peru.travel/en">their official website.</a></p>
 
-        <p id="boliviaWinner">The country you should visit is <strong>Bolivia</strong>.</p>
+        <p id="boliviaWinner">The country you should visit is <strong>Bolivia</strong>. Bolivia is known to have one of the best landscapes in the world. From one of the most beautiful Salars in the world to the beautiful cities throughout the country,
+          Bolivia is a perfect destination if you don't want to walk around a city and would rather enjoy a walk around natural areas. Even if you don't know much spanish, you will not have a problem communicating around with the locals as their spanish is easy to understand and many of them
+          know english as a second language! This is definitely a destination you do not want to miss. Usually, the best time of the year to travel is during the months of April and May and the end of October since this is their dry season which means fewer crowds and decent weather. For more information visit <a href="https://boliviatravelsite.com/">their official website.</a></p>
 
-        <p id="ecuadorWinner">The country you should visit is <strong>Ecuador</strong>.</p>
+        <p id="ecuadorWinner">The country you should visit is <strong>Ecuador</strong>. If you enjoy beautiful landscapes while eating good food this is the place for you! You probably don't like
+           crowded cities and would much rather enjoy the beautiful natural spots that your destination offers. If you like animals, then you really want to visit Ecuador. Ecuador is one of the most biodiverse countries in the world since it counts with Galapagos Island as a very popular destination.
+           You probably don't know much spanish, but the language will definitely not be a problem since the locals are known to be extremely nice and most of them know english as a second language. Usually, the best time of the year to travel is during the month of June through September. For more information visit <a href="https://ecuador.travel/en/">their official website.</a></p>
 
-        <p id="colombiaWinner">The country you should visit is <strong>Colombia</strong>.</p>
+        <p id="colombiaWinner">The country you should visit is <strong>Colombia</strong>. If you enjoy sunbathing during the day and partying during the night, then Colombia is the place for you! Colombia is home to many of the best beaches in the world while also being famous
+           for hosting the best parties around. Even if spanish is not your first language you will not have a problem communicating with the locals since most of them know english as a second language and the beautiful Colombian accent is not hard to undestand. You would probably rather be
+           on a beach sunbathing than in a destination where the weather usually gets on the colder side. If this sounds like you, then you definitely want to visit Colombia! Usually, the best time of the year to travel is during the months of June to September and December to March. For more information visit <a href="https://colombia.travel/en">their official website.</a></p>
 
-        <p id="venezuelaWinner">The country you should visit is <strong>Venezuela</strong>.</p>
+        <p id="venezuelaWinner">The country you should visit is <strong>Venezuela</strong>. Famous for their fantastic Arepas, Venezuela is definitely the place you'd wanna visit if you want the best of both worlds: a big city and beautiful beaches. Venezuela home to thousands of beautiful beaches around the coastal areas of the country and
+          has a very fun nightlife during the night. Also, it counts with the famous Angel Falls, which is definitely a fan favorite. If you enjoy being around people then this is definitely the place for you to be! Locals are very warm and wwill try their best to accomodate tourists. You probably enjoy a warm, sunny day rather than a cold one, so Venezuela is definitely the place for you!
+          Usually, the best time to travel to Venezuela is during the dry season which is from the month of December to April. For more information visit <a href="https://www.worldtravelguide.net/guides/south-america/venezuela/">their official website.</a></p>
 
-        <p id="paraguayWinner">The country you should visit is <strong>Paraguay</strong>.</p>
+        <p id="paraguayWinner">The country you should visit is <strong>Paraguay</strong>. You probably enjoy learning about new cultures and traditions and meeting new people as well. Paraguay does not get too cold or too hot so you will definitely not have to worry
+           about the weather in this destination. If you don't know much spanish you will not have to worry about communicating with the locals, since many of them tend to know english as a second language
+           and also their beautiful accent is not hard to undertand. Paraguay has many beautiful destinations that will definitely make you not want to come back! Usually, the best time to travel to Paraguay is during the month of March to November, when the weather is not very cold yet.
+            For more information visit <a href="https://www.visitparaguay.travel/">their official website.</a></p>
 
         <div id="map2" class="mx-auto m-4"></div>
 
@@ -290,7 +343,7 @@
     </div>
 
 
-    <footer class="text-center">Website created by Micaela Leiva for the University of Florida</footer>
+    <footer class="text-center">Website created by Micaela Leiva for the University of Florida. Link to my Github repo can be found <a href="https://github.com/micaleiva01/south-american-quiz">here.</a></footer>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>

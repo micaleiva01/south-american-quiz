@@ -1,6 +1,11 @@
 body {
   color: #000;
   background: #F5E6CF;
+  font-family: Roboto, Calibri, sans-serif;
+}
+
+h1 {
+  font-family: Oswald, Cambria, serif;
 }
 
 #map2 {

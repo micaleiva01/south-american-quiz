@@ -1,3 +1,227 @@
+var elementIntro = document.getElementById("intro");
+var elementQuiz = document.getElementById("quiz");
+var elementResults = document.getElementById("result");
+let btn = document.getElementById("btn");
+const submitbtn = document.getElementById("submit");
+const resetbtn = document.getElementById("reset");
+elementQuiz.style.display = "none";
+elementResults.style.display = "none";
+
+
+resetbtn.addEventListener('click', function(){
+  window.location.reload();
+  return false;
+});
+
+
+btn.onclick = function showQuiz() {
+    elementQuiz.style.display = "block";
+    elementIntro.style.display = "none";
+};
+
+
+submitbtn.onclick = function submitResults() {
+  elementQuiz.style.display = "none";
+  elementIntro.style.display = "none";
+  elementResults.style.display = "block";
+};
+
+
+let mapVar = L.map('map2').setView([-19.704684, -59.429373], 3.4);
+  L.tileLayer('https://api.mapbox.com/styles/v1/micaleiva1/clb1hq2p8000314mjjwoj5h2t/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWljYWxlaXZhMSIsImEiOiJjbGFsazYzazgwNjZhM29xYzg2djRpdWV0In0.mI9xq8pXSbYhFTvax_TOmA', {
+      maxZoom: 18,
+      attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>'
+  }).addTo(mapVar);
+
+  for (let i = 0; i < places.length; i++) {
+    L.marker([places[i].latitude, places[i].longitude])
+    .bindPopup('<h3>' + places[i].placeName + '</h3>' + '<p>' + places[i].description + '</p>')
+    .addTo(mapVar);
+  }
+
+
+  let brazilWinner = document.getElementById("brazilWinner");
+  brazilWinner.style.display = "none";
+  let argentinaWinner = document.getElementById("argentinaWinner");
+  argentinaWinner.style.display = "none";
+  let chileWinner = document.getElementById("chileWinner");
+  chileWinner.style.display = "none";
+  let uruguayWinner = document.getElementById("uruguayWinner");
+  uruguayWinner.style.display = "none";
+  let peruWinner = document.getElementById("peruWinner");
+  peruWinner.style.display = "none";
+  let boliviaWinner = document.getElementById("boliviaWinner");
+  boliviaWinner.style.display = "none";
+  let ecuadorWinner = document.getElementById("ecuadorWinner");
+  ecuadorWinner.style.display = "none";
+  let colombiaWinner = document.getElementById("colombiaWinner");
+  colombiaWinner.style.display = "none";
+  let venezuelaWinner = document.getElementById("venezuelaWinner");
+  venezuelaWinner.style.display = "none";
+  let paraguayWinner = document.getElementById("paraguayWinner");
+  paraguayWinner.style.display = "none";
+
+
+
+var questionCount = 0;
+var result1Score = 0;
+var result2Score = 0;
+var result3Score = 0;
+var result4Score = 0;
+
+var resultVar = document.getElementById("result");
+
+//first question
+var q1a1 = document.getElementById("q1a1");
+var q1a2 = document.getElementById("q1a2");
+var q1a3 = document.getElementById("q1a3");
+var q1a4 = document.getElementById("q1a4");
+//second question
+var q2a1 = document.getElementById("q2a1");
+var q2a2 = document.getElementById("q2a2");
+var q2a3 = document.getElementById("q2a3");
+var q2a4 = document.getElementById("q2a4");
+//third question
+var q3a1 = document.getElementById("q3a1");
+var q3a2 = document.getElementById("q3a2");
+var q3a3 = document.getElementById("q3a3");
+var q3a4 = document.getElementById("q3a4");
+//fourth question
+var q4a1 = document.getElementById("q4a1");
+var q4a2 = document.getElementById("q4a2");
+var q4a3 = document.getElementById("q4a3");
+var q4a4 = document.getElementById("q4a4");
+//fifth question
+var q5a1 = document.getElementById("q5a1");
+var q5a2 = document.getElementById("q5a2");
+var q5a3 = document.getElementById("q5a3");
+//sixth question
+var q6a1 = document.getElementById("q6a1");
+var q6a2 = document.getElementById("q6a2");
+var q6a3 = document.getElementById("q6a3");
+//seventh question
+var q7a1 = document.getElementById("q7a1");
+var q7a2 = document.getElementById("q7a2");
+var q7a3 = document.getElementById("q7a3");
+//eigth question
+var q8a1 = document.getElementById("q8a1");
+var q8a2 = document.getElementById("q8a2");
+var q8a3 = document.getElementById("q8a3");
+var q8a4 = document.getElementById("q8a4");
+//ninth question
+var q9a1 = document.getElementById("q9a1");
+var q9a2 = document.getElementById("q9a2");
+var q9a3 = document.getElementById("q9a3");
+var q9a4 = document.getElementById("q9a4");
+
+
+q1a1.addEventListener("click", result1);
+q1a2.addEventListener("click", result2);
+q1a3.addEventListener("click", result3);
+q1a4.addEventListener("click", result4);
+
+q2a1.addEventListener("click", result1);
+q2a2.addEventListener("click", result2);
+q2a3.addEventListener("click", result3);
+q2a4.addEventListener("click", result4);
+
+q3a1.addEventListener("click", result1);
+q3a2.addEventListener("click", result2);
+q3a3.addEventListener("click", result3);
+q3a4.addEventListener("click", result4);
+
+q4a1.addEventListener("click", result1);
+q4a2.addEventListener("click", result2);
+q4a3.addEventListener("click", result3);
+q4a4.addEventListener("click", result4);
+
+q5a1.addEventListener("click", result1);
+q5a2.addEventListener("click", result2);
+q5a3.addEventListener("click", result3);
+
+q6a1.addEventListener("click", result1);
+q6a2.addEventListener("click", result2);
+q6a3.addEventListener("click", result3);
+
+q7a1.addEventListener("click", result1);
+q7a2.addEventListener("click", result2);
+q7a3.addEventListener("click", result3);
+
+q8a1.addEventListener("click", result1);
+q8a2.addEventListener("click", result2);
+q8a3.addEventListener("click", result3);
+q8a4.addEventListener("click", result4);
+
+q9a1.addEventListener("click", result1);
+q9a2.addEventListener("click", result2);
+q9a3.addEventListener("click", result3);
+q9a4.addEventListener("click", result4);
+
+
+
+function result1() {
+  result1Score++, questionCount++;
+  if (questionCount >= 9) {
+    showResult();
+  }
+}
+
+function result2() {
+  result2Score++, questionCount++;
+  if (questionCount >= 9) {
+    showResult();
+  }
+}
+
+function result3() {
+  result3Score++, questionCount++;
+  if (questionCount >= 9) {
+    showResult();
+  }
+}
+
+function result4() {
+  result4Score++, questionCount++;
+  if (questionCount >= 9) {
+    showResult();
+  }
+}
+
+
+function showResult() {
+  if (result1Score >= 3) {
+    brazilWinner.style.display = "block";
+  }
+  else if (result2Score > 3) {
+    argentinaWinner.style.display = "block";
+  }
+  else if (result3Score >3) {
+    chileWinner.style.display = "block";
+  }
+  else if (result4Score > 3) {
+    uruguayWinner.style.display = "block";
+  }
+  else if (result1Score >=2) {
+    peruWinner.style.display = "block";
+  }
+  else if (result2Score >= 2) {
+    boliviaWinner.style.display = "block";
+  }
+  else if (result3Score >= 2) {
+    ecuadorWinner.style.display = "block";
+  }
+  else if (result4Score >= 2) {
+    colombiaWinner.style.display = "block";
+  }
+  else if (result4Score >= 2) {
+    venezuelaWinner.style.display = "block";
+  }
+  else {
+    paraguayWinner.style.display = "block";
+  }
+}
+
+/*
 var argentina = 0;
 var buenosAires = document.querySelectorAll('.argentina');
 var brazil = 0;
@@ -20,35 +244,6 @@ var paraguay = 0;
 var asuncion = document.querySelectorAll('.paraguay');
 
 
-var elementIntro = document.getElementById("intro");
-var elementQuiz = document.getElementById("quiz");
-var elementResults = document.getElementById("result");
-const btn = document.getElementById("btn");
-const submitbtn = document.getElementById("submit");
-const resetbtn = document.getElementById("reset");
-elementQuiz.style.display = "none";
-elementResults.style.display = "none";
-
-
-resetbtn.addEventListener('click', function(){
-  window.location.reload();
-  return false;
-});
-
-
-btn.onclick = function showQuiz() {
-    elementQuiz.style.display = "block";
-    elementIntro.style.display = "none";
-}
-
-
-submitbtn.onclick = function submitResults() {
-  addResults();
-  elementQuiz.style.display = "none";
-  elementIntro.style.display = "none";
-  elementResults.style.display = "block";
-  displayResults();
-}
 
 
 function addResults() {
@@ -63,6 +258,8 @@ function addResults() {
   uruguayFunc();
   chileFunc();
 }
+
+if (div.classList.contains("foo")) {  // instructions }
 
 function argentinaFunc(){
   if (buenosAires.onclick) {
@@ -129,18 +326,7 @@ function argentinaFunc(){
     let winner = Math.max(argentina, brazil, colombia, peru, chile, ecuador, venezuela, uruguay, bolivia, paraguay);
     console.log(winner);
   }
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 
 /*
 let message = "";
@@ -486,19 +672,3 @@ previousButton.addEventListener('click',loadPreviousQuestion);
 result.addEventListener('click',restartQuiz);
 
 */
-
-
-
-let mapVar = L.map('map2').setView([-19.704684, -59.429373], 3.4);
-
-
-L.tileLayer('https://api.mapbox.com/styles/v1/micaleiva1/clb1hq2p8000314mjjwoj5h2t/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibWljYWxlaXZhMSIsImEiOiJjbGFsazYzazgwNjZhM29xYzg2djRpdWV0In0.mI9xq8pXSbYhFTvax_TOmA', {
-    maxZoom: 18,
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>'
-}).addTo(mapVar);
-
-for (let i = 0; i < places.length; i++) {
-  L.marker([places[i].latitude, places[i].longitude])
-  .bindPopup('<h3>' + places[i].placeName + '</h3>' + '<p>' + places[i].description + '</p>')
-  .addTo(mapVar);
-}
